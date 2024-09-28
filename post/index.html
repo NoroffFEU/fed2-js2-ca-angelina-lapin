@@ -1,13 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>All Posts - Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Post Page</h1>
+    <h1>All Posts</h1>
+
+    <a href="/post/create/">Create New Post</a>
+
+    <div id="posts-container">
+      <div class="post" id="post-123">
+        <h2>Post Title</h2>
+        <p>Post content...</p>
+        <button data-post-id="123" onclick="onDeletePost(event)">Delete</button>
+      </div>
+    </div>
   </body>
 </html>
