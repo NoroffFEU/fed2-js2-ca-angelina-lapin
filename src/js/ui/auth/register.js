@@ -1,21 +1,21 @@
-import { register } from "../../api/auth/register.js";
+import { register } from '../../api/auth/register.js';
 
 export async function onRegister(event) {
   event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
 
-  console.log("Sending data to the server:", {
+  console.log('Sending data to the server:', {
     name,
     email,
     password,
   });
 
   if (!name || !email || !password) {
-    console.error("Incorrect data: one or more fields are empty");
-    alert("Please fill in all fields!");
+    console.error('Incorrect data: one or more fields are empty');
+    alert('Please fill in all fields!');
     return;
   }
 
@@ -26,9 +26,9 @@ export async function onRegister(event) {
       password,
     });
 
-    window.location.href = "/auth/login/";
+    window.location.href = '/auth/login/';
   } catch (error) {
-    console.error("Error during registration (UI):", error.message);
-    alert("Registration error: " + error.message);
+    console.error('Error during registration (UI):', error.message);
+    alert('Registration error: ' + error.message);
   }
 }

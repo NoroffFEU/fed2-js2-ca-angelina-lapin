@@ -1,5 +1,5 @@
-import { API_SOCIAL_PROFILES, API_SOCIAL_POSTS } from "../constants.js";
-import { headers } from "../headers.js";
+import { API_SOCIAL_PROFILES, API_SOCIAL_POSTS } from '../constants.js';
+import { headers } from '../headers.js';
 /**
  *
  * @param {string} username - The username to fetch posts for
@@ -11,7 +11,7 @@ export async function loadUserPosts(username) {
     const response = await fetch(
       `${API_SOCIAL_PROFILES}/${username}/posts?limit=12`,
       {
-        method: "GET",
+        method: 'GET',
         headers: headers(),
       }
     );
@@ -19,14 +19,14 @@ export async function loadUserPosts(username) {
     if (!response.ok) {
       const error = await response.json();
 
-      throw new Error(error.message || "Failed to load posts");
+      throw new Error(error.message || 'Failed to load posts');
     }
 
     const posts = await response.json();
 
     return posts;
   } catch (error) {
-    console.error("Error loading posts:", error);
+    console.error('Error loading posts:', error);
     throw error;
   }
 }
@@ -39,21 +39,21 @@ export async function loadUserPosts(username) {
 export async function readPosts(limit = 12) {
   try {
     const response = await fetch(`${API_SOCIAL_POSTS}?limit=${limit}`, {
-      method: "GET",
+      method: 'GET',
       headers: headers(),
     });
 
     if (!response.ok) {
       const error = await response.json();
 
-      throw new Error(error.message || "Failed to load posts");
+      throw new Error(error.message || 'Failed to load posts');
     }
 
     const posts = await response.json();
 
     return posts;
   } catch (error) {
-    console.error("Error loading all posts:", error);
+    console.error('Error loading all posts:', error);
     throw error;
   }
 }
@@ -66,21 +66,21 @@ export async function readPosts(limit = 12) {
 export async function getPostById(id) {
   try {
     const response = await fetch(`${API_SOCIAL_POSTS}/${id}`, {
-      method: "GET",
+      method: 'GET',
       headers: headers(),
     });
 
     if (!response.ok) {
       const error = await response.json();
 
-      throw new Error(error.message || "Failed to fetch post");
+      throw new Error(error.message || 'Failed to fetch post');
     }
 
     const post = await response.json();
 
     return post.data;
   } catch (error) {
-    console.error("Error fetching post:", error);
+    console.error('Error fetching post:', error);
     throw error;
   }
 }

@@ -1,15 +1,15 @@
-import { deletePost } from "../../api/post/delete.js";
+import { deletePost } from '../../api/post/delete.js';
 
 export async function onDeletePost(event) {
   event.preventDefault();
 
-  const postId = event.target.getAttribute("data-post-id");
+  const postId = event.target.getAttribute('data-post-id');
   if (!postId) {
-    console.error("Post ID not found.");
+    console.error('Post ID not found.');
     return;
   }
 
-  if (!confirm("Are you sure you want to delete this post?")) {
+  if (!confirm('Are you sure you want to delete this post?')) {
     return;
   }
 
@@ -21,7 +21,7 @@ export async function onDeletePost(event) {
       postElement.remove();
     }
   } catch (error) {
-    console.error("Error deleting post from UI:", error);
-    alert("Failed to delete post: " + error.message);
+    console.error('Error deleting post from UI:', error);
+    alert('Failed to delete post: ' + error.message);
   }
 }

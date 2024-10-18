@@ -1,8 +1,8 @@
 // Use Postman, or JavaScript to get your API key
 // In Workflow we will learn how to secure this information
-export const API_KEY = "11cac378-6134-4713-89c2-121feef595fa";
+export const API_KEY = '11cac378-6134-4713-89c2-121feef595fa';
 
-export const API_BASE = "https://v2.api.noroff.dev";
+export const API_BASE = 'https://v2.api.noroff.dev';
 
 export const API_AUTH = `${API_BASE}/auth`;
 

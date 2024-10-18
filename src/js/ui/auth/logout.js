@@ -1,5 +1,4 @@
 export function onLogout() {
-  localStorage.removeItem("token");
-
-  window.location.href = "/auth/login/";
+  localStorage.removeItem('token');
+  window.location.assign('/auth/login/');
 }

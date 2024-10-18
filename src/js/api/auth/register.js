@@ -1,5 +1,5 @@
-import { API_AUTH_REGISTER } from "../constants.js";
-import { headers } from "../headers.js";
+import { API_AUTH_REGISTER } from '../constants.js';
+import { headers } from '../headers.js';
 /**
  *
  * @param {object} params - The parameters to register a user
@@ -18,9 +18,9 @@ export async function register({ name, email, password }) {
     };
 
     const response = await fetch(API_AUTH_REGISTER, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestBody),
     });
@@ -33,14 +33,14 @@ export async function register({ name, email, password }) {
           console.error(`Error ${index + 1}:`, err.message || err);
         });
       }
-      throw new Error(errorData.message || "Registration failed");
+      throw new Error(errorData.message || 'Registration failed');
     }
 
     const data = await response.json();
 
     return data;
   } catch (error) {
-    console.error("Error during registration (catch block):", error.message);
+    console.error('Error during registration (catch block):', error.message);
     throw error;
   }
 }

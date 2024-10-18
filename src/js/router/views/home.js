@@ -1,5 +1,5 @@
 export function renderHome() {
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   if (app) {
     app.innerHTML = `
     <h1>Home Page</h1>

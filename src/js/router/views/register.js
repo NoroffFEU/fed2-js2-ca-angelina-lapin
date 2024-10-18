@@ -1,7 +1,7 @@
-import { onRegister } from "../../ui/auth/register.js";
+import { onRegister } from '../../ui/auth/register.js';
 
 export function renderRegister() {
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   app.innerHTML = `
     <h1>Register</h1>
     <form name="register">
@@ -47,5 +47,5 @@ export function renderRegister() {
   `;
 
   const form = document.forms.register;
-  form.addEventListener("submit", onRegister);
+  form.addEventListener('submit', onRegister);
 }

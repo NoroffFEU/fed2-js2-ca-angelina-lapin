@@ -1,5 +1,5 @@
 export function renderNotFound() {
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   if (!app) {
     console.error("Element with id 'app' not found in the DOM.");
     return;

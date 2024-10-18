@@ -1,11 +1,11 @@
-import { authGuard } from "../../utilities/authGuard.js";
-import { getPostById } from "../../api/post/read.js";
-import { updatePost } from "../../api/post/update.js";
+import { authGuard } from '../../utilities/authGuard.js';
+import { getPostById } from '../../api/post/read.js';
+import { updatePost } from '../../api/post/update.js';
 
 export async function renderPostEdit(postId) {
   authGuard();
 
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   if (!app) {
     console.error("Element with id 'app' not found.");
     return;
@@ -31,7 +31,7 @@ export async function renderPostEdit(postId) {
       <div>
         <label for="tags">Tags (comma separated)</label>
         <input id="tags" type="text" name="tags" value="${post.tags.join(
-          ", "
+          ', '
         )}" />
       </div>
 
@@ -42,33 +42,33 @@ export async function renderPostEdit(postId) {
   `;
 
   document
-    .getElementById("editPostForm")
-    .addEventListener("submit", async (event) => {
+    .getElementById('editPostForm')
+    .addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const updatedPost = {
-        title: document.getElementById("title").value,
-        body: document.getElementById("body").value,
+        title: document.getElementById('title').value,
+        body: document.getElementById('body').value,
         tags: document
-          .getElementById("tags")
-          .value.split(",")
+          .getElementById('tags')
+          .value.split(',')
           .map((tag) => tag.trim()),
       };
 
       try {
         await updatePost(postId, updatedPost);
-        window.location.href = "/profile/";
+        window.location.href = '/profile/';
       } catch (error) {
-        console.error("Error updating post:", error);
-        alert("Failed to update post");
+        console.error('Error updating post:', error);
+        alert('Failed to update post');
       }
     });
 
-  document.getElementById("goBackButton").addEventListener("click", () => {
+  document.getElementById('goBackButton').addEventListener('click', () => {
     window.history.back();
   });
 
-  document.getElementById("goBackHomeButton").addEventListener("click", () => {
-    window.location.href = "/";
+  document.getElementById('goBackHomeButton').addEventListener('click', () => {
+    window.location.href = '/';
   });
 }

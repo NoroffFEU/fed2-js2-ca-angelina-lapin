@@ -1,7 +1,7 @@
-import { onLogin } from "../../ui/auth/login.js";
+import { onLogin } from '../../ui/auth/login.js';
 
 export function renderLogin() {
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   app.innerHTML = `
     <h1>Login</h1>
     <form name="login">
@@ -21,5 +21,5 @@ export function renderLogin() {
   `;
 
   const form = document.forms.login;
-  form.addEventListener("submit", onLogin);
+  form.addEventListener('submit', onLogin);
 }

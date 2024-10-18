@@ -1,10 +1,10 @@
-import { onCreatePost } from "../../ui/post/create.js";
-import { authGuard } from "../../utilities/authGuard.js";
+import { onCreatePost } from '../../ui/post/create.js';
+import { authGuard } from '../../utilities/authGuard.js';
 
 export function renderPostCreate() {
   authGuard();
 
-  const app = document.getElementById("app");
+  const app = document.getElementById('app');
   if (!app) {
     console.error("Element with id 'app' not found.");
     return;
@@ -44,10 +44,10 @@ export function renderPostCreate() {
 
   `;
 
-  const form = document.forms["createPost"];
+  const form = document.forms['createPost'];
   if (form) {
-    form.addEventListener("submit", onCreatePost);
+    form.addEventListener('submit', onCreatePost);
   } else {
-    console.error("Create post form not found.");
+    console.error('Create post form not found.');
   }
 }
